@@ -16,7 +16,7 @@ const Home = () => {
                             <p className="card-text">Modelo: {prod.modelo}</p>
                             <p className="card-text">Precio: ${prod.precio}</p>
                             <p className="card-text">Stock: {prod.stock}</p>
-                            <button className='btn btn-dark'><link className='nav-link' to={`/producto/${prod.id}`}>Ver producto</link></button>
+                            <button className="btn btn-dark"> <link className='nav-link' to={`/producto/${prod.id}`}>Ver producto</link></button>
                         </div>
                 </div>
                 
