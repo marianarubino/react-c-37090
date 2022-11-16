@@ -7,8 +7,8 @@ import CartWidget from './CartWidget/CartWidget';
 import ItemCount from './ItemCount/ItemCount';
 import Home from './Home/Home';
 import Dolar from './Dolar/Dolar';
-import Producto from './Producto/Producto';
-import Carrito from './Carrito/Carrito';
+import ItemDetailContainer from './ItemDetailContainer/ItemDetailContainer';
+import Cart from './Cart/Cart';
 
 const App = () => {
     return (
@@ -17,8 +17,8 @@ const App = () => {
             <Navbar/>
             <Routes>
                 <Route path='/' element= {<Home/>}/>
-                <Route path='/producto/:id' element={<Producto/>}/>
-                <Route path='/carrito' element={<Carrito/>}/>    
+                <Route path='/product/:id' element={<ItemDetailContainer/>}/>
+                <Route path='/cart' element={<Cart/>}/>    
             </Routes>   
         </BrowserRouter>
         </>

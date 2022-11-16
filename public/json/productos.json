@@ -2,7 +2,7 @@
     {
         "id": 1,
         "idCategoria": 1,
-        "nombre": "Notebook",
+        "nombre": "JUGUETES-Notebook",
         "marca": "Lenovo",
         "modelo": "Y510P",
         "precio": 60000,
@@ -12,7 +12,7 @@
     {
         "id": 2,
         "idCategoria": 1,
-        "nombre": "Celular",
+        "nombre": "JUGUETES-Celular",
         "marca": "Xiomi",
         "modelo": "Mi-9",
         "precio": 35000,
@@ -22,7 +22,7 @@
     {
         "id": 3,
         "idCategoria": 1,
-        "nombre": "Smart Tv",
+        "nombre": "JUGUETES-Smart Tv",
         "marca": "Novatech",
         "modelo": "50D1U",
         "precio": 57000,
@@ -32,7 +32,7 @@
     {
         "id": 4,
         "idCategoria": 2,
-        "nombre": "Camara Deportiva",
+        "nombre": "TEJIDOS-Camara Deportiva",
         "marca": "iQual",
         "modelo": "C40",
         "precio": 8000,
@@ -42,7 +42,7 @@
     {
         "id": 5,
         "idCategoria": 2,
-        "nombre": "Mouse",
+        "nombre": "TEJIDOS-Mouse",
         "marca": "Logitech",
         "modelo": "G502",
         "precio": 1400,
@@ -52,7 +52,7 @@
     {
         "id": 6,
         "idCategoria": 2,
-        "nombre": "Auriculares",
+        "nombre": "TEJIDOS-Auriculares",
         "marca": "Motorola",
         "modelo": "Pulse Escape",
         "precio": 4000,
@@ -62,7 +62,7 @@
     {
         "id": 7,
         "idCategoria": 1,
-        "nombre": "iPhone",
+        "nombre": "JUGUETES-iPhone",
         "marca": "Apple",
         "modelo": "X Silver",
         "precio": 250000,
@@ -72,7 +72,7 @@
     {
         "id": 8,
         "idCategoria": 2,
-        "nombre": "Apple TV",
+        "nombre": "TEJIDOS-Apple TV",
         "marca": "Apple ",
         "modelo": "32 Gb",
         "precio": 45000,
@@ -82,7 +82,7 @@
     {
         "id": 9,
         "idCategoria": 2,
-        "nombre": "Parlante",
+        "nombre": "TEJIDOS-Parlante",
         "marca": "Kalley",
         "modelo": "SPK200",
         "precio": 34000,
@@ -92,7 +92,7 @@
     {
         "id": 10,
         "idCategoria": 1,
-        "nombre": "Mac",
+        "nombre": "JUGUETES-Mac",
         "marca": "Apple",
         "modelo": "Air",
         "precio": 13000,
