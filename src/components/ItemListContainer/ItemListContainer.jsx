@@ -13,24 +13,21 @@ const ItemListContainer = () => {
         if(category) {
             consultarBDD('../json/productos.json').then(products => {
                 const productsList= products.filter(prod => prod.idCategoria === parseInt(category))
-                console.log(productsList)
-                const cardProductos = ItemList({productsList})
-                setProductos(cardProductos)
+                setProductos(productsList)
             })
         } else {
             consultarBDD('./json/productos.json').then(productsList => {
-                const cardProductos = ItemList({productsList})
-                setProductos(cardProductos)
+                setProductos(productsList)
             })
         }
         
     },[category]);
+
     
     return (
         <div className='row'>
-            {productos}
-        </div>
-       
+            <ItemList productsList={productos}/>
+        </div>       
     );
 }
 
