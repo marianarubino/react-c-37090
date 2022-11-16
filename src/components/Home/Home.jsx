@@ -7,9 +7,7 @@ const Home = () => {
 
     useEffect(() => {
         consultarBDD('../json/productos.json').then(productos => {
-            const cardProductos = productos.map(prod => )
-            setProductos(cardProductos)
-
+            setProductos(productos)
         })
 },[]);
 

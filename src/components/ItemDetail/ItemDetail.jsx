@@ -5,7 +5,7 @@ const ItemDetail = ({producto}) => {
     return (
         <div className='row g-0'>
             <div className="col-md-4">
-                <img src={`../img/${Producto.img}`} className="img-fluid rounded-start"/>
+                <img src={`../img/${producto.img}`} className="img-fluid rounded-start"/>
             </div>
             <div className="col-md-8">
                 <div className="card-body">
