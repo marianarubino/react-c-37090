@@ -6,7 +6,7 @@
         "marca": "Lenovo",
         "modelo": "Y510P",
         "precio": 60000,
-        "stock": 30,
+        "stock": 5,
         "img": "tejidoMate.jpeg"
     },
     {
@@ -16,7 +16,7 @@
         "marca": "Xiomi",
         "modelo": "Mi-9",
         "precio": 35000,
-        "stock": 20,
+        "stock": 10,
         "img": "tejidoMate.jpeg"
     },
     {
@@ -36,7 +36,7 @@
         "marca": "iQual",
         "modelo": "C40",
         "precio": 8000,
-        "stock": 30,
+        "stock": 20,
         "img": "deco-almohadon.webp"
     },
     {
@@ -56,7 +56,7 @@
         "marca": "Motorola",
         "modelo": "Pulse Escape",
         "precio": 4000,
-        "stock": 20,
+        "stock": 25,
         "img": "deco-almohadon.webp"
     },
     {
@@ -86,7 +86,7 @@
         "marca": "Kalley",
         "modelo": "SPK200",
         "precio": 34000,
-        "stock": 21,
+        "stock": 25,
         "img": "juguete-madera-martillo.jpeg"
     },
     {
