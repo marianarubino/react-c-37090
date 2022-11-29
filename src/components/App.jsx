@@ -1,5 +1,10 @@
 import './app.css'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
+
+//Context
+import { CartContextProvider } from '../context/CartContext';
+
+//Componentes
 import FormBusqueda from './FormBusqueda/FormBusqueda';
 import Navbar from './Navbar/Navbar';
 import ItemListContainer from './ItemListContainer/ItemListContainer';
@@ -13,14 +18,16 @@ import Cart from './Cart/Cart';
 const App = () => {
     return (
         <>
-        <BrowserRouter>
-            <Navbar/>
-            <Routes>
-                <Route path='/' element= {<ItemListContainer/>}/>
-                <Route path='/product/:id' element={<ItemDetailContainer/>}/>
-                <Route path='/cart' element={<Cart/>}/>    
-            </Routes>   
-        </BrowserRouter>
+            <BrowserRouter>
+                <CartContextProvider>
+                    <Navbar/>
+                    <Routes>
+                        <Route path='/' element= {<ItemListContainer/>}/>
+                        <Route path='/product/:id' element={<ItemDetailContainer/>}/>
+                        <Route path='/cart' element={<Cart/>}/>    
+                    </Routes>
+                </CartContextProvider>   
+            </BrowserRouter>
         </>
 
     );

@@ -1,13 +1,14 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useContext} from 'react'; //este usecontext se declara aqui porque sin el no puedo hacer uso del context.
 import ItemList from '../itemList/itemList.jsx';
 import {consultarBDD} from '../../assets/funciones.js'
 import { useParams } from 'react-router-dom';
-
+//import { DarkModeContext } from '../../context/darkMode.js';
 const ItemListContainer = () => {
 
     const [productos, setProductos] = useState([]);
     const {category} = useParams()
 
+    //const {darkMode, toggleDarkMode} = useContext (DarkModeContext)
 
     useEffect(() => {
         if(category) {
@@ -25,7 +26,7 @@ const ItemListContainer = () => {
 
     
     return (
-        <div className='row'>
+        <div className=  'row'>
             <ItemList productsList={productos}/>
         </div>       
     );

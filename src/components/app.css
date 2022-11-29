@@ -11,3 +11,8 @@
 .card-body{
     background-color: lightpink;
 }
+
+.darMode {
+    background-color: black;
+    color: antiquewhite;
+}
