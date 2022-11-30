@@ -26,7 +26,7 @@ const CartContextProvider = (props) => {
 
             setCart([...cart, nuevoProducto])
         }
-        console.log(cart)
+        
     }
 
     const emptyCart = () => {
@@ -47,6 +47,8 @@ const CartContextProvider = (props) => {
         return cart.reduce((acum, prod) => acum += (prod.cant * prod.precio), 0)
 // aca calculo el precio total del carrito.     
     }
+    
+    console.log(cart)
 
     return (
         <CartContext.Provider value = {{cart, isInCart, addItem, emptyCart, removeItem,getItemQuantity, totalPrice}}>

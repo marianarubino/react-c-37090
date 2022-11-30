@@ -5,15 +5,16 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import { CartContextProvider } from '../context/CartContext';
 
 //Componentes
-import FormBusqueda from './FormBusqueda/FormBusqueda';
+
 import Navbar from './Navbar/Navbar';
 import ItemListContainer from './ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './ItemDetailContainer/ItemDetailContainer';
+import Cart from './Cart/Cart';
+import Checkout from './Checkout/Checkout'
 import CartWidget from './CartWidget/CartWidget';
 import ItemCount from './ItemCount/ItemCount';
 import Home from './Home/Home';
-import Dolar from './Dolar/Dolar';
-import ItemDetailContainer from './ItemDetailContainer/ItemDetailContainer';
-import Cart from './Cart/Cart';
+import FormBusqueda from './FormBusqueda/FormBusqueda';
 
 const App = () => {
     return (
@@ -25,6 +26,8 @@ const App = () => {
                         <Route path='/' element= {<ItemListContainer/>}/>
                         <Route path='/product/:id' element={<ItemDetailContainer/>}/>
                         <Route path='/cart' element={<Cart/>}/>    
+                        <Route path='/category/:category' element={<ItemListContainer/>}/>
+                        <Route path='/checkout' element={<Checkout/>}></Route>
                     </Routes>
                 </CartContextProvider>   
             </BrowserRouter>
