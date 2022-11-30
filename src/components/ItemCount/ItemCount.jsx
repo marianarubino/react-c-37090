@@ -25,7 +25,7 @@ const ItemCount = ({stock, onAdd}) => {
 
 export default ItemCount;
 
-/* esta funcion dejo de funcionar luego de la clase 10 :
+/* esta funcion la cambiamos luego de la clase 10 :
 const modificarContador = (operacion) => {
         if(operacion === "+") {
             if(contador < prod.stock) //producto.stock

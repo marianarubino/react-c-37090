@@ -1,6 +1,6 @@
 import {useState, useEffect, useContext} from 'react'; //este usecontext se declara aqui porque sin el no puedo hacer uso del context.
 import ItemList from '../itemList/itemList.jsx';
-import {consultarBDD} from '../../assets/funciones.js'
+import {getProductos} from '../../assets/firebase.js'
 import { useParams } from 'react-router-dom';
 //import { DarkModeContext } from '../../context/darkMode.js';
 const ItemListContainer = () => {
@@ -12,12 +12,12 @@ const ItemListContainer = () => {
 
     useEffect(() => {
         if(category) {
-            consultarBDD('../json/productos.json').then(products => {
+            getProductos().then(products => {
                 const productsList= products.filter(prod => prod.idCategoria === parseInt(category))
                 setProductos(productsList)
             })
         } else {
-            consultarBDD('./json/productos.json').then(productsList => {
+            getProductos().then(productsList => {
                 setProductos(productsList)
             })
         }
