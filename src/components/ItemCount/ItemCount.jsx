@@ -2,16 +2,18 @@ import {useState} from 'react';
 
 const ItemCount = ({stock, onAdd}) => {
     const [contador, setContador] = useState(1) //valor inicial xq no puede comprar cero. 
-
-    const modificarContador = (operacion) => {
-        const agregarAlCarrito = () => {
+    
+    
+    const agregarAlCarrito = () => {
             onAdd(contador)
         }
     
-        const incrementar = () => contador < stock && setContador(contador + 1)
-    
-        const decrementar = () => contador > 1 && setContador(contador - 1) 
-    }
+    const incrementar = () => contador < stock && setContador(contador + 1)
+
+    const decrementar = () => contador > 1 && setContador(contador - 1) 
+
+ 
+
     return (
 //todo lo que este dentro del return es lo q veo en mi pag.//
         <>

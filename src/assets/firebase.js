@@ -3,7 +3,7 @@
 
 
 import { initializeApp } from "firebase/app";
-import {getFirestore, collection, addDoc, getDoc, getDocs, doc} from "firebase/firestore"
+import {getFirestore, collection, addDoc, getDoc, getDocs, doc, updateDoc, deleteDoc} from "firebase/firestore"
 // Your web app's Firebase configuration
 
 
@@ -19,7 +19,27 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getFirestore()
+const db = getFirestore(app);
+
+const getProductos = async() => {
+  const productos = await getDocs (collection (db, "productos"))
+  const items = productos.docs.map(prod => {return {...prod.data(), id: prod.id}} )
+  return items
+
+}
+
+const getProducto = async (id) => {
+  const prod = await getDoc(doc(db, "productos",id))
+  let item
+  if(prod.data()) {
+      item = {...prod.data(), id: prod.id}
+  } else {
+      item = "Producto no encontrado"
+  }
+  
+  return item
+}
+
 const cargarBDD = async () => { 
   const promise = await fetch ('./json/productos.json')
   const productos = await promise.json ()
@@ -36,23 +56,57 @@ const cargarBDD = async () => {
     })
   })
 }
+const createProducto = async (objProducto) => {
+  const estado = await addDoc(collection(db, "productos"), {
+      nombre: objProducto.nombre,
+      marca: objProducto.marca,
+      modelo: objProducto.modelo,
+      idCategoria: objProducto.idCategoria,
+      stock: objProducto.stock,
+      precio: objProducto.precio,
+      img: objProducto.img
+  })
 
-const getProductos = async() => {
-  const productos = await getDocs (collection (db, "productos"))
-  const items = productos.docs.map(prod => {return {...prod.data(), id: prod.id}} )
-  return items
-
+  return estado
 }
 
-const getProducto = async (id) => {
-  const prod = await getDoc (doc (db, "productos",id))
-  const item = {...prod.data(), id: prod.id}
-  return item
+const updateProducto = async(id, info) => {
+  const estado = await updateDoc(doc(db, "productos",id), info)
+  return estado
+}
+
+const deleteProducto = async(id) => {
+  const estado = await deleteDoc(doc(db,"productos", id))
+  return estado
+}
+
+const createOrdenCompra = async (cliente, precioTotal, fecha) => {
+  const ordenCompra = await addDoc(collection(db, "ordenCompra"), {
+      nombre: cliente.nombre,
+      apellido: cliente.apellido,
+      email: cliente.email,
+      dni: cliente.dni,
+      celular:cliente.celular,
+      direccion: cliente.direccion,
+      fecha: fecha,
+      precioTotal: precioTotal
+  })
+
+  return ordenCompra
+}
+
+const getOrdenCompra = async(id) => {
+  const item = await getDoc(doc(db, "ordenCompra", id))
+  const ordenCompra = {...item.data(), id: item.id}
+  return ordenCompra
 }
 
 
 
-export {cargarBDD, getProductos,getProducto, createProducto, createOrdenCompra, getOrdenCompra}
+
+
+
+export {cargarBDD, getProductos,getProducto, createProducto,updateProducto, deleteProducto, createOrdenCompra, getOrdenCompra}
 
 
 /* clase 12:

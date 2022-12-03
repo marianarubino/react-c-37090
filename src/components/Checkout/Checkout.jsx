@@ -23,6 +23,7 @@ const Checkout = () => {
                 updateProducto(producto.id, prod)
             })
         })
+    
         
         createOrdenCompra(valores, totalPrice(), new Date().toISOString().slice(0, 10)).then(orden => {
             toast.success(`Su orden ${orden.id} fue creada con éxito`)
@@ -35,26 +36,29 @@ const Checkout = () => {
             console.error(error)
         })
         
+
     }
-
-
     return (
         <div className="container">
             <form onSubmit={consultarFormulario} ref={datosFormulario}>
                 <div className="mb-3">
-                    <label htmlFor="nombre" className="form-label">Nombre y Apellido</label>
+                    <label htmlFor="nombre" className="form-label">Nombre</label>
                     <input type="text" className="form-control" name="nombre" />
                 </div>
                 <div className="mb-3">
+                    <label htmlFor="nombre" className="form-label">Apellido</label>
+                    <input type="text" className="form-control" name="apellido" />
+                </div>
+                <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email</label>
-                    <input type="email" className="form-control" name="nombre" />
+                    <input type="email" className="form-control" name="email" />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="dni" className="form-label">DNI</label>
                     <input type="number" className="form-control" name="dni" />
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="celular" className="form-label">Numero de contacto</label>
+                    <label htmlFor="celular" className="form-label">Celular</label>
                     <input type="number" className="form-control" name="celular" />
                 </div>
                 <div className="mb-3">
