@@ -1,17 +1,43 @@
-import React from "react";
-
+import React, {useContext} from "react"
+import { useNavigate, Link } from "react-router-dom";
+import { createOrdenCompra, getProducto, updateProducto } from "../../assets/firebase"
+import { CartContext } from "../../context/CartContext"
+import {toast } from 'react-toastify';
 
 const Checkout = () => {
     const datosFormulario = React.useRef()
-    const consultarFormulario = (e)=>{
+    let navigate = useNavigate()
+    const {cart,emptyCart, totalPrice} = useContext(CartContext);
+
+
+//toda este codigo para que se chequeee el stock al momento de finalizar compra.
+    const consultarFormulario = (e) => {
         e.preventDefault()
-        console.log(datosFormulario)
         const datForm = new FormData(datosFormulario.current)
         const valores = Object.fromEntries(datForm)
-        console.log(valores)
-        e.target.reset() 
+        const aux = [...cart]
+        aux.forEach(producto => {
+            getProducto(producto.id)
+            .then(prod => {
+                prod.stock -= producto.cant
+                updateProducto(producto.id, prod)
+            })
+        })
+        
+        createOrdenCompra(valores, totalPrice(), new Date().toISOString().slice(0, 10)).then(orden => {
+            toast.success(`Su orden ${orden.id} fue creada con éxito`)
+            emptyCart()
+            e.target.reset()
+            navigate("/")
+          
+        }).catch(error => {
+            toast.error(`Su orden no fue creada con éxito`)
+            console.error(error)
+        })
+        
     }
-    
+
+
     return (
         <div className="container">
             <form onSubmit={consultarFormulario} ref={datosFormulario}>

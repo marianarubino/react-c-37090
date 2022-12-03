@@ -1,6 +1,7 @@
 import './app.css'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-
+import 'react-toastify/dist/ReactToastify.css';
+import {ToastContainer} from 'react-toastify'
 //Context
 import { CartContextProvider } from '../context/CartContext';
 
@@ -29,7 +30,8 @@ const App = () => {
                         <Route path='/category/:category' element={<ItemListContainer/>}/>
                         <Route path='/checkout' element={<Checkout/>}></Route>
                     </Routes>
-                </CartContextProvider>   
+                </CartContextProvider> 
+                <ToastContainer/>  
             </BrowserRouter>
         </>
 

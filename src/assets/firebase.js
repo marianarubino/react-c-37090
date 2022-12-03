@@ -1,5 +1,4 @@
-// Import the functions you need from the SDKs you need
-// Add SDKs for Firebase products that you want to use
+
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 
@@ -7,7 +6,7 @@ import { initializeApp } from "firebase/app";
 import {getFirestore, collection, addDoc, getDoc, getDocs, doc} from "firebase/firestore"
 // Your web app's Firebase configuration
 
-//"AIzaSyDHCPVDP03UuyLJ5_7Aypc7bVID--tfjjo"
+
 
 const firebaseConfig = {
   apiKey:process.env.API_KEY , //NUNCA SUBIR A GITHUB PORQUE ES MI CONTRASEÑA. ENVIAR AL PROFE POR MSG AL MOMENTO DE ENTREGAR.
