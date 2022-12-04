@@ -1,7 +1,7 @@
 .cardProducto {
-    width:15rem;
-    margin: 15px;
-    background-color: pink;
+    width: 20rem;
+    margin: 20px;
+    background-color: rgba(246, 3, 242, 0.458);
 }
 
 .ItemDetail{
@@ -10,6 +10,7 @@
 }
 .card-body{
     background-color: lightpink;
+    
 }
 
 .darMode {
